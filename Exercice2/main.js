@@ -1,3 +1,3 @@
 const getBalance = require('./bank');
 
-getBalance();
+console.log(getBalance(2000));
