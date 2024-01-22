@@ -1,4 +1,5 @@
 let database = require('./database');
+let cache = require('./cache');
 
 function insertPatient(patient) {
     database.patient.push(patient);
@@ -8,6 +9,12 @@ function insertPatient(patient) {
 function insertPatientIntoList({creationDate, ...patient}) {
     database.patientList.push(patient);
     console.log(database.patientList);
+}
+
+function insertPatientCache({firstName, lastName, ...patient}) {
+    patient.name = firstName+' '+lastName;
+    cache.patientCache[patient.id] = patient;
+    console.log(cache);
 }
 
 function getPatientIndexByID(id, list) {
@@ -25,9 +32,25 @@ function getPatientByID(id, list) {
     // return database.patient.filter((patient) => patient.id === id)[0];
 }
 
+function getPatientCacheByID(id) {
+    return cache.patientCache[id];
+}
+
 function updatePatient(patient) {
     //database.patient[getPatientIndexByID(patient.id)] = patient;
     console.log(database.patient);
 }
 
-module.exports = {insertPatient, updatePatient, getPatientByID, insertPatientIntoList};
+function updatePatientList(patient) {
+    //database.patientList[getPatientIndexByID(patient.id)] = patient;
+    console.log(database.patientList);
+}
+
+function updatePatientCache(patient) {
+    cache.patientCache[patient.id] = patient;
+    console.log('===cache===\n');
+    console.log(cache);
+    console.log('\n===cache===\n');
+}
+
+module.exports = {insertPatient, updatePatient, getPatientByID, insertPatientIntoList, updatePatientList, insertPatientCache, getPatientCacheByID, updatePatientCache};

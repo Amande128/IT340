@@ -1,0 +1,3 @@
+patientCache = {};
+
+module.exports = {patientCache};

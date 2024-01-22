@@ -1,5 +1,6 @@
 /**
  * Create Retrieve Update Delete (CRUD)
+ * Command and Query Responsibility Segregation (CQRS)
  */
 
 const patientService = require('./patientService');
