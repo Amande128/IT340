@@ -4,8 +4,12 @@ function incrementID() {
 }
 
 class Patient {
-    constructor(lastName, firstName) {
-        this.id = incrementID();
+    constructor(lastName, firstName, id) {
+        if(id === -1) {
+            this.id = incrementID();
+        } else {
+            this.id = id
+        }
         this.lastName = lastName;
         this.firstName = firstName;
         this.creationDate = new Date();
