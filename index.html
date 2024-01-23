@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en"> <!-- dir="rtl" -->
+  <meta charset="UTF-8">
+  <title>TP GLRT</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <style>
+    :root {
+        /* writing-mode:vertical-lr; */
+        --text-color: green;
+        --text-contrast: contrast(1);
+        --border-section-color: rgb(255, 123, 0);
+        --border-color: rgb(98, 0, 255);
+        --border: 3px solid;
+        --space-L: 20px;
+        --space-M: 15px;
+        --space-S: 10px;
+        --space-XS: 5px;
+        --font-size-L: 1.5rem;
+        --font-size-M: 1.2rem;
+        --font-size-S: 1rem;
+        --space-XS: 5px;
+    }
+    @keyframes font-slide {
+        from {
+            text-align: start;
+        }
+        
+        50% {
+            text-align: center;
+        }
+        
+        to {
+            text-align: end;
+        }
+    }
+
+    @media (prefers-reduced-motion) {
+        .header {
+            animation: none;
+        }
+
+    }
+
+    /* fichier header.css */
+    
+    .header {
+      padding: var(--space-L);
+      border: var(--border) var(--border-color);
+      color: var(--text-color);
+      filter: var(--text-contrast);
+      font-size: clamp(32px, var(--font-size-L), 80px);
+      margin: var(--space-XS);
+      inline-size: 50%;
+      block-size: 5rem;
+      animation: font-slide 2s linear  infinite;
+    }
+
+  </style>
+  
+  <style>
+    /* fichier section.css */
+    
+    .section {
+      padding: var(--space-M);
+      border: var(--border) var(--border-section-color);
+      font-size: var(--font-size-M);
+      margin: var(--space-XS);
+    }
+  </style>
+  
+  <style>
+    /* fichier footer.css */
+    
+    .footer {
+      padding: var(--space-S);
+      border: var(--border) var(--border-color);
+      color: var(--text-color);
+      filter: var(--text-contrast);
+      font-size: var(--font-size-S);
+      margin: var(--space-XS);
+      text-align: end;
+    }
+  </style>
+
+  </html>
+
+  <body>
+    <div class="header">Ceci est un header</div>
+    
+    <div class="section">Section 1</div>
+    <div class="section">Section 2</div>
+    
+    <div class="footer">Ceci est un footer</div>
+  </body>
+</html> 
